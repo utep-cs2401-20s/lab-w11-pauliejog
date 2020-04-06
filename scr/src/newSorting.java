@@ -54,7 +54,7 @@ public class newSorting {
         for(int i = 0; i < LH.length; i++)
             LH[i] = A[i];
 
-        int index = A.length;
+        int index = A.length/2;
         for(int j = 0; j < RH.length; j++,index++)
             RH[j] = A[index];
     }//end populate
