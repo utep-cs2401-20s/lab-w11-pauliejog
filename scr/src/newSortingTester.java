@@ -10,7 +10,39 @@ public class newSortingTester {
      */
     @Test
     public void testNewSorting1() {
-        
+
+    }
+    /*
+     * newSorting() method:
+     *
+     */
+    @Test
+    public void testNewSorting2() {
+
+    }
+    /*
+     * newSorting() method:
+     *
+     */
+    @Test
+    public void testNewSorting3() {
+
+    }
+    /*
+     * newSorting() method:
+     *
+     */
+    @Test
+    public void testNewSorting4() {
+
+    }
+    /*
+     * newSorting() method:
+     *
+     */
+    @Test
+    public void testNewSorting5() {
+
     }
 
 
