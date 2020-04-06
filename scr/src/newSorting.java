@@ -6,7 +6,7 @@ public class newSorting {
             int mid = A.length/2;
             int[] LH = new int[mid];
             int[] RH = new int[A.length - mid];
-            populate(A,LH,RH);
+            populate(A,LH,RH);//populate LH and RH
             newSorting(RH,size);
             newSorting(LH,size);
             mergeSortedHalves(A,LH,RH);
@@ -23,20 +23,30 @@ public class newSorting {
         int j = 0;//index for RH
         int index = 0;//index for A
         while(index < A.length) {
-            if(LH[i] < RH[j]) {
-                if(i < LH.length)
+            if(i < LH.length) {
+                if(j < RH.length) {
+                    if(LH[i] < RH[j]) {
+                        A[index] = LH[i];
+                        index++;
+                        i++;
+                    }
+                    else {
+                        A[index] = RH[j];
+                        index++;
+                        j++;
+                    }
+                }
+                else {
                     A[index] = LH[i];
-                index++;
-                i++;
+                    index++;
+                    i++;
+                }
             }
-            else {
-                if(j < RH.length)
-                    A[index] = RH[j];
+            else if(j < RH.length) {
+                A[index] = RH[j];
                 index++;
                 j++;
-
             }
-
         }
     }//end mergeSortedHalves
 
