@@ -1,5 +1,5 @@
 public class newSorting {
-    void newSorting(int[] A, int size) {
+    public void newSorting(int[] A, int size) {
         if(A.length <= size)
             quickSort(A);
         else {
@@ -14,11 +14,25 @@ public class newSorting {
 
     }//end newSorting
 
-    void quickSort(int[] A) {
+    private void quickSort(int[] A) {
+        if(A.length < 2)
+            return;
+        else {
+            int index = partition(A);
+            int[] left = new int[index];
+            int[] right = new int[A.length-index];
+            quickSort(left);
+            quickSort(right);
+
+        }
 
     }//end quickSort
 
-    void mergeSortedHalves(int[] A, int[] LH, int[] RH) {
+    private int partition(int[] A, int l, int r) {
+        return 0;
+    }//end partition
+
+    private void mergeSortedHalves(int[] A, int[] LH, int[] RH) {
         int i = 0;//index for LH
         int j = 0;//index for RH
         int index = 0;//index for A
@@ -50,7 +64,7 @@ public class newSorting {
         }
     }//end mergeSortedHalves
 
-    void populate(int[] A, int[] LH, int[] RH) {
+    private void populate(int[] A, int[] LH, int[] RH) {
         for(int i = 0; i < LH.length; i++)
             LH[i] = A[i];
 
