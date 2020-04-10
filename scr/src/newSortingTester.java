@@ -19,7 +19,7 @@ public class newSortingTester {
         newSorting ns = new newSorting();
         int[] sort = {3,2,7,5,1,9,4};
         int[] exp = {1,2,3,4,5,7,9};
-        ns.newSorting(sort,7);
+        ns.newSorting(sort,4);//size is about half the array size
         assertArrayEquals(exp,sort);
     }
     /*
@@ -37,7 +37,7 @@ public class newSortingTester {
     }
     /*
      * newSorting(sort,) method:
-     * This tests case aims to stress the newSorting method given a reversely sorted array.
+     * This test case aims to stress the newSorting method given a reversely sorted array.
      * PASSED
      */
     @Test
@@ -51,7 +51,8 @@ public class newSortingTester {
     }
     /*
      * newSorting() method:
-     * This test case is to check that the method works correctly if the size parameter is <= the size of the array.
+     * This test case is to check that the method works correctly if the size
+     * parameter is >= the size of the array.
      * PASSED
      */
     @Test

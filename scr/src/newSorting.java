@@ -32,12 +32,12 @@ public class newSorting {
         while(index < A.length) {//length of A
             if(i < LH.length) {//if i is in bounds
                 if(j < RH.length) {//if j is in bounds
-                    if(LH[i] < RH[j]) {
+                    if(LH[i] < RH[j]) {//swap
                         A[index] = LH[i];
                         index++;
                         i++;
                     }
-                    else {
+                    else {//swap
                         A[index] = RH[j];
                         index++;
                         j++;
@@ -66,19 +66,20 @@ public class newSorting {
     * quickSort: recursive method to sort an array
      */
     private void quickSort(int[] A, int start, int end) {//recursive quickSort method
-        int index = partition(A, start, end);
-        if(index-1 > start)
+        int index = partition(A, start, end);//index of pivot after partitioning
+        if(index-1 > start)//left side of partitioned array
             quickSort(A, start, index-1);
-        if(index+1 < end)
+        if(index+1 < end)//right side of partitioned array
             quickSort(A, index+1, end);
 
     }//end quickSort
     /*
     * partition: helper method to partition the array during quickSort
      */
-    private int partition(int[] A, int l, int r) {//will partition from left to right
+    private int partition(int[] A, int l, int r) {
         int pivot = A[l];//pivot is first element
-        int less = l+1;
+        int less = l+1;//index of elements less than pivot
+        int temp;//temp value to swap elements
         while(less <= r) {
             while(less < A.length && A[less] < pivot)//loop to find elements < pivot
                 less++;//track the index for left side
@@ -86,7 +87,7 @@ public class newSorting {
                 r--;//track the index for right side
             if(less <= r) {//considers new indices just found
                 //swap the values
-                int temp = A[less];
+                temp = A[less];
                 A[less] = A[r];
                 A[r] = temp;
                 less++;
@@ -94,9 +95,9 @@ public class newSorting {
             }
         }
         //once less > r swap the pivot value with A[r] and return r
-        int hold = A[r];
+        temp = A[r];
         A[r] = A[l];
-        A[l] = hold;
+        A[l] = temp;
 
         return r;//new index of pivot
     }//end partition
@@ -107,7 +108,7 @@ public class newSorting {
         for(int i = 0; i < LH.length; i++)//loop to fill LH
             LH[i] = A[i];
 
-        int index = A.length/2;
+        int index = A.length/2;//starting at second half of A
         for(int j = 0; j < RH.length; j++,index++)//loop to fill RH
             RH[j] = A[index];
     }//end populate
